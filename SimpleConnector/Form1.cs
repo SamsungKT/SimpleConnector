@@ -63,7 +63,7 @@ namespace SimpleConnector
 
             WriteCfgValue(dxwndIni, "exepath", Environment.CurrentDirectory + "\\");
             WriteCfgValue(dxwndIni, "path0", Environment.CurrentDirectory + "\\" + runExe);
-            WriteCfgValue(dxwndIni, "launchpath0", Environment.CurrentDirectory + "\\" + runExe);
+            WriteCfgValue(dxwndIni, "launchpath0", Environment.CurrentDirectory + "\\" + runExe + " " + ip + " " + port);
 
         }
 
@@ -232,6 +232,12 @@ namespace SimpleConnector
 
         public void ProcessdxwndExe()
         {
+            string processName = "dxwnd"; // 확인하려는 프로세스 이름
+            bool isRunning = IsProcessRunning(processName);
+
+            if (isRunning)
+                return;
+
             try
             {
                 Thread.Sleep(500);
@@ -261,21 +267,10 @@ namespace SimpleConnector
             try
             {
                 Thread.Sleep(500);
-                StringBuilder sb = new StringBuilder();
-                sb.AppendFormat("{0} {1:d}", _ip, _port);
-                ProcessStartInfo processStartInfo = new ProcessStartInfo();
-                processStartInfo.FileName = runExe;
-                processStartInfo.Arguments = sb.ToString();
-                Console.WriteLine("아이피: " + sb.ToString());
-                processStartInfo.Verb = "runas";
-                processStartInfo.UseShellExecute = false;
-                //MessageBox.Show(processStartInfo.Arguments);
-                Process process = Process.Start(processStartInfo);
-                process.Close();
-                //if (isBoolChk())  // os버전 10이라면 실행 
-                //{
-                //    processlin();   // 게임창 전체화면 내리고 다시 올려주기 
-                //}
+                Process process = new Process();
+                process.StartInfo.FileName = dxwndExe ; // Replace with your executable
+                process.StartInfo.Arguments = "/Y:#1"; // Replace with your arguments
+                process.Start();
             }
             catch (Exception ex)
             {
@@ -286,6 +281,12 @@ namespace SimpleConnector
 
             }
 
+        }
+
+        static bool IsProcessRunning(string processName)
+        {
+            Process[] processes = Process.GetProcessesByName(processName);
+            return processes.Length > 0;
         }
 
         private void btn_connect_Click(object sender, EventArgs e)

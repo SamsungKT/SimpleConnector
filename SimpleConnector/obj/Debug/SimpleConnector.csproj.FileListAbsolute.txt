@@ -1,0 +1,10 @@
+D:\Work\VS2022\SimpleConnector\SimpleConnector\bin\Debug\SimpleConnector.exe.config
+D:\Work\VS2022\SimpleConnector\SimpleConnector\bin\Debug\SimpleConnector.exe
+D:\Work\VS2022\SimpleConnector\SimpleConnector\bin\Debug\SimpleConnector.pdb
+D:\Work\VS2022\SimpleConnector\SimpleConnector\obj\Debug\SimpleConnector.csproj.AssemblyReference.cache
+D:\Work\VS2022\SimpleConnector\SimpleConnector\obj\Debug\SimpleConnector.Form1.resources
+D:\Work\VS2022\SimpleConnector\SimpleConnector\obj\Debug\SimpleConnector.Properties.Resources.resources
+D:\Work\VS2022\SimpleConnector\SimpleConnector\obj\Debug\SimpleConnector.csproj.GenerateResource.cache
+D:\Work\VS2022\SimpleConnector\SimpleConnector\obj\Debug\SimpleConnector.csproj.CoreCompileInputs.cache
+D:\Work\VS2022\SimpleConnector\SimpleConnector\obj\Debug\SimpleConnector.exe
+D:\Work\VS2022\SimpleConnector\SimpleConnector\obj\Debug\SimpleConnector.pdb
