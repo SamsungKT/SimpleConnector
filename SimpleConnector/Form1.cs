@@ -179,8 +179,8 @@ namespace SimpleConnector
             if (height != null)
                 textHeight.Text = height;
 
-            WriteCfgValue(dxwndIni, "sizx0", textWidth.Text);
-            WriteCfgValue(dxwndIni, "sizy0", textHeight.Text);
+            //WriteCfgValue(dxwndIni, "sizx0", textWidth.Text);
+            //WriteCfgValue(dxwndIni, "sizy0", textHeight.Text);
             WriteCfgValue(dxwndIni, "initresw0", textWidth.Text);
             WriteCfgValue(dxwndIni, "initresh0", textHeight.Text);
         }
@@ -289,6 +289,30 @@ namespace SimpleConnector
             return processes.Length > 0;
         }
 
+        private void KillDxwnd()
+        {
+            string processName = "dxwnd"; // Replace with the name of the process you want to check
+
+            // Get all processes with the specified name
+            Process[] processes = Process.GetProcessesByName(processName);
+
+            if (processes.Length > 0)
+            {
+                Console.WriteLine($"{processName} is running. Killing the process...");
+
+                // Kill each process
+                foreach (Process process in processes)
+                {
+                    process.Kill();
+                    Console.WriteLine($"Process {process.Id} killed.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{processName} is not running.");
+            }
+        }
+
         private void btn_connect_Click(object sender, EventArgs e)
         {
             if (!isFullMode)
@@ -322,6 +346,8 @@ namespace SimpleConnector
             {
                 WriteCfgValue(myCfgFile, "MODE", "640");
                 ReadMyCfg();
+
+                KillDxwnd();
             }
         }
 
@@ -331,6 +357,8 @@ namespace SimpleConnector
             {
                 WriteCfgValue(myCfgFile, "MODE", "1280");
                 ReadMyCfg();
+
+                KillDxwnd();
             }
         }
 
@@ -340,6 +368,8 @@ namespace SimpleConnector
             {
                 WriteCfgValue(myCfgFile, "MODE", "CUSTOM");
                 ReadMyCfg();
+
+                KillDxwnd();
             }
         }
 
@@ -348,6 +378,8 @@ namespace SimpleConnector
             WriteCfgValue(myCfgFile, "SIZX0", textWidth.Text);
             WriteCfgValue(dxwndIni, "sizx0", textWidth.Text);
             WriteCfgValue(dxwndIni, "initresw0", textWidth.Text);
+
+            KillDxwnd();
         }
 
         private void textHeight_TextChanged(object sender, EventArgs e)
@@ -355,6 +387,8 @@ namespace SimpleConnector
             WriteCfgValue(myCfgFile, "SIZY0", textHeight.Text);
             WriteCfgValue(dxwndIni, "sizy0", textHeight.Text);
             WriteCfgValue(dxwndIni, "initresh0", textHeight.Text);
+
+            KillDxwnd();
         }
 
     }
