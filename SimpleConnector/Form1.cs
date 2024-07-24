@@ -65,6 +65,19 @@ namespace SimpleConnector
             WriteCfgValue(dxwndIni, "path0", Environment.CurrentDirectory + "\\" + runExe);
             WriteCfgValue(dxwndIni, "launchpath0", Environment.CurrentDirectory + "\\" + runExe + " " + ip + " " + port);
 
+
+            //pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.Image = Image.FromFile("my.gif");
+            //groupBox1.Parent = pictureBox1;
+
+            btn_connect.Parent = pictureBox1; 
+            btn_connect.BackColor = Color.Transparent;
+
+            btn_home.Parent = pictureBox1;
+            btn_setting.Parent = pictureBox1;
+
+
+
         }
 
         public void GetWebCfg()
@@ -391,5 +404,19 @@ namespace SimpleConnector
             KillDxwnd();
         }
 
+        private void btn_screen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_setting_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(1020, 383);
+        }
+
+        private void btn_setting_ok_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(708, 383);
+        }
     }
 }

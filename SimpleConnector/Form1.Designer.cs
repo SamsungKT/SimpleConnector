@@ -47,12 +47,18 @@
             this.textRemoteIp = new System.Windows.Forms.TextBox();
             this.btn_connect = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_setting_ok = new System.Windows.Forms.Button();
+            this.btn_setting = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.btn_setting_ok);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textHeight);
@@ -62,9 +68,10 @@
             this.groupBox1.Controls.Add(this.radio640);
             this.groupBox1.Controls.Add(this.radioFull);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 12);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox1.Location = new System.Drawing.Point(698, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 315);
+            this.groupBox1.Size = new System.Drawing.Size(301, 352);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "화면설정";
@@ -72,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 259);
+            this.label2.Location = new System.Drawing.Point(67, 252);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 31);
             this.label2.TabIndex = 7;
@@ -81,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 219);
+            this.label1.Location = new System.Drawing.Point(67, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 31);
             this.label1.TabIndex = 6;
@@ -89,7 +96,7 @@
             // 
             // textHeight
             // 
-            this.textHeight.Location = new System.Drawing.Point(161, 256);
+            this.textHeight.Location = new System.Drawing.Point(161, 249);
             this.textHeight.Name = "textHeight";
             this.textHeight.ReadOnly = true;
             this.textHeight.Size = new System.Drawing.Size(64, 38);
@@ -99,7 +106,7 @@
             // 
             // textWidth
             // 
-            this.textWidth.Location = new System.Drawing.Point(161, 212);
+            this.textWidth.Location = new System.Drawing.Point(161, 205);
             this.textWidth.Name = "textWidth";
             this.textWidth.ReadOnly = true;
             this.textWidth.Size = new System.Drawing.Size(64, 38);
@@ -162,7 +169,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textRemoteIp);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(353, 12);
+            this.groupBox2.Location = new System.Drawing.Point(1039, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(407, 232);
             this.groupBox2.TabIndex = 1;
@@ -225,42 +232,85 @@
             // 
             // btn_connect
             // 
+            this.btn_connect.BackColor = System.Drawing.Color.Transparent;
+            this.btn_connect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_connect.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_connect.Location = new System.Drawing.Point(381, 268);
+            this.btn_connect.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_connect.Location = new System.Drawing.Point(110, 281);
             this.btn_connect.Name = "btn_connect";
             this.btn_connect.Size = new System.Drawing.Size(157, 51);
             this.btn_connect.TabIndex = 2;
             this.btn_connect.Text = "서버접속하기";
-            this.btn_connect.UseVisualStyleBackColor = true;
+            this.btn_connect.UseVisualStyleBackColor = false;
             this.btn_connect.Click += new System.EventHandler(this.btn_connect_Click);
             // 
             // btn_home
             // 
+            this.btn_home.BackColor = System.Drawing.Color.Transparent;
+            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.Location = new System.Drawing.Point(585, 268);
+            this.btn_home.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_home.Location = new System.Drawing.Point(388, 281);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(152, 51);
             this.btn_home.TabIndex = 3;
             this.btn_home.Text = "홈페이지가기";
-            this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.UseVisualStyleBackColor = false;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(693, 352);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_setting_ok
+            // 
+            this.btn_setting_ok.Location = new System.Drawing.Point(44, 302);
+            this.btn_setting_ok.Name = "btn_setting_ok";
+            this.btn_setting_ok.Size = new System.Drawing.Size(218, 40);
+            this.btn_setting_ok.TabIndex = 8;
+            this.btn_setting_ok.Text = "확인";
+            this.btn_setting_ok.UseVisualStyleBackColor = true;
+            this.btn_setting_ok.Click += new System.EventHandler(this.btn_setting_ok_Click);
+            // 
+            // btn_setting
+            // 
+            this.btn_setting.BackColor = System.Drawing.Color.Transparent;
+            this.btn_setting.FlatAppearance.BorderSize = 0;
+            this.btn_setting.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_setting.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_setting.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_setting.Location = new System.Drawing.Point(588, 281);
+            this.btn_setting.Name = "btn_setting";
+            this.btn_setting.Size = new System.Drawing.Size(81, 51);
+            this.btn_setting.TabIndex = 5;
+            this.btn_setting.Text = "설정";
+            this.btn_setting.UseVisualStyleBackColor = false;
+            this.btn_setting.Click += new System.EventHandler(this.btn_setting_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 354);
+            this.ClientSize = new System.Drawing.Size(691, 344);
+            this.Controls.Add(this.btn_setting);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_home);
             this.Controls.Add(this.btn_connect);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "SimpleConnector 20240723";
+            this.Text = "SimpleConnector 20240724";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,6 +335,9 @@
         private System.Windows.Forms.RadioButton radioRemote;
         private System.Windows.Forms.Button btn_connect;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_setting_ok;
+        private System.Windows.Forms.Button btn_setting;
     }
 }
 
