@@ -1,1 +1,3 @@
 "# SimpleConnector" 
+
+MIT License 
